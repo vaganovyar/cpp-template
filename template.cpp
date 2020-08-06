@@ -27,14 +27,16 @@ double lenght(ii a, ii b){
     return sqrt(pow((a.first - b.first), 2) + pow((a.second - b.second), 2));
 }
 //upper ceil of a / b
-int rmod(ll a, ll b){
-    float x = a / b;
+ll rmod(ll a, ll b){
+    double x = a / b;
     if (x > int(x))
         x = int(x) + 1;
+    x = int(x);
     return x;
 }
 //-1 if s not in vector, else index
-int binSearch(vi n, ll s){
+ll binSearch(vi n, ll s){
+    sort(n.begin(), n.end());
     ull left = 0;
     ull right = n.size();
     ull mid = rmod((right + left), 2);
